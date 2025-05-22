@@ -1,200 +1,248 @@
-/* Stil general */
+/* Общий стиль */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    line-height: 1.6;
+    color: #ffffff;
+    line-height: 1.7;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Stiluri specifice pentru fiecare pagină */
+/* Стили для каждой страницы */
 .home-page {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    background-size: 200% 200%;
-    animation: gradientBG 10s ease infinite;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 300% 300%;
+    animation: cosmicGradient 15s ease infinite;
 }
 
 .history-page {
-    background: linear-gradient(135deg, #4b6584 0%, #a5b1c2 100%);
-    background-size: 200% 200%;
-    animation: gradientBG 12s ease infinite;
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    background-size: 300% 300%;
+    animation: cosmicGradient 12s ease infinite;
 }
 
 .education-page {
-    background: linear-gradient(135deg, #2ecc71 0%, #7bed9f 100%);
-    background-size: 200% 200%;
-    animation: gradientBG 10s ease infinite;
+    background: linear-gradient(135deg, #1dd1a1, #00b894);
+    background-size: 300% 300%;
+    animation: cosmicGradient 10s ease infinite;
 }
 
 .future-page {
-    background: linear-gradient(135deg, #6f2dbd 0%, #e056fd 100%);
-    background-size: 200% 200%;
-    animation: gradientBG 10s ease infinite;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    background-size: 300% 300%;
+    animation: cosmicGradient 13s ease infinite;
 }
 
-/* Animație pentru fundal */
-@keyframes gradientBG {
+/* Анимация фона */
+@keyframes cosmicGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Antet și banner */
+/* Эффект звезд на главной странице */
+.home-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Шапка и баннер */
 header {
     text-align: center;
-    padding: 1em;
+    padding: 2em;
     position: relative;
-    overflow: hidden;
+    perspective: 1000px;
 }
 
 .banner {
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    padding: 3em 1em;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    margin-bottom: 1.5em;
-    position: relative;
-    animation: pulse 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    padding: 3.5em 1em;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2em;
+    transform: rotateX(5deg);
+    transition: transform 0.5s ease;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.banner:hover {
+    transform: rotateX(0deg);
 }
 
 .banner h1 {
     font-family: 'Montserrat', sans-serif;
     color: white;
     margin: 0;
-    font-size: 3em;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    font-size: 3.2em;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Animație pentru banner */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+/* Анимация свечения */
+@keyframes glow {
+    from { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+    to { box-shadow: 0 10px 40px rgba(69, 183, 209, 0.7); }
 }
 
-/* Meniu de navigare */
+/* Меню навигации */
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    margin: 1em 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    margin: 1.5em 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav ul li {
-    margin: 0 1.5em;
+    margin: 0 2em;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    padding: 0.8em 1.5em;
-    border-radius: 5px;
+    font-weight: 700;
+    padding: 0.8em 1.8em;
+    border-radius: 10px;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+nav ul li a::before {
+    content: '\f0c1'; /* Иконка цепочки из Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
 }
 
 nav ul li a:hover {
-    background-color: #00c6ff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #45b7d1;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 nav ul li a.active {
-    background-color: #0072ff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #ff6b6b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Conținut principal */
+/* Основной контент */
 main {
-    max-width: 1000px;
-    margin: 2em auto;
-    padding: 0 1.5em;
+    max-width: 1100px;
+    margin: 3em auto;
+    padding: 0 2em;
 }
 
 section {
     background: rgba(255, 255, 255, 0.95);
-    padding: 2.5em;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 3em;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     margin-bottom: 2em;
-    animation: fadeIn 1s ease-in;
+    animation: slideIn 1s ease-in-out;
 }
 
-/* Animație pentru secțiuni */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+/* Анимация появления контента */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 section h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #0072ff;
-    margin-bottom: 1em;
-    font-size: 2em;
-    border-left: 5px solid #00c6ff;
-    padding-left: 0.5em;
+    color: #ff6b6b;
+    margin-bottom: 1.2em;
+    font-size: 2.5em;
+    border-left: 6px solid #45b7d1;
+    padding-left: 0.7em;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #45b7d1;
 }
 
 section p, section ul {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 section ul li {
-    margin-bottom: 0.8em;
+    margin-bottom: 1em;
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 2em;
 }
 
 section ul li::before {
-    content: "➤";
+    content: '\f101'; /* Иконка стрелки из Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
     position: absolute;
     left: 0;
-    color: #0072ff;
+    color: #45b7d1;
 }
 
-/* Multimedia */
+/* Мультимедиа */
 .img-zoom {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 15px;
     max-width: 100%;
     height: auto;
 }
 
 .img-zoom:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.15) rotate(2deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 iframe {
     max-width: 100%;
-    border-radius: 10px;
-    margin: 1.5em 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 2em 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Subsol */
+/* Подвал */
 footer {
     text-align: center;
-    padding: 1.5em;
-    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    padding: 2em;
+    background: linear-gradient(45deg, #ff6b6b, #45b7d1);
     color: white;
     position: relative;
     bottom: 0;
     width: 100%;
     margin-top: 3em;
-    border-top: 3px solid #ffffff;
+    border-top: 4px solid #ffffff;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsivitate */
+/* Адаптивность */
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     nav ul {
@@ -203,10 +251,17 @@ footer {
     }
 
     nav ul li {
-        margin: 0.5em 0;
+        margin: 0.8em 0;
     }
 
     section {
-        padding: 1.5em;
+        padding: 2em;
+    }
+
+    main {
+        padding: 0 1em;
     }
 }
+
+/* Подключение Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
