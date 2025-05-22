@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    color: #2d3436; /* Темный цвет текста */
     line-height: 1.8;
     overflow-x: hidden;
     position: relative;
@@ -139,7 +139,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #e0e0ff; /* Светлый цвет для контраста с темным текстом контента */
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -183,7 +183,7 @@ main {
 }
 
 section {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 3.5em;
     border-radius: 25px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -203,6 +203,7 @@ section h2 {
     font-size: 2.8em;
     position: relative;
     padding-bottom: 0.5em;
+    color: #2d3436; /* Темный цвет для заголовков */
 }
 
 section h2::after {
@@ -222,51 +223,48 @@ section h2:hover::after {
 
 .home-page section h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #e0e0ff;
+    color: #1e1e2f;
     text-shadow: 0 0 10px #45b7d1;
 }
 
 .history-page section h2 {
     font-family: 'Courier Prime', monospace;
-    color: #dfe6e9;
+    color: #2d3436;
     letter-spacing: 1px;
 }
 
 .education-page section h2 {
     font-family: 'Caveat', cursive;
-    color: #00d68f;
+    color: #009432;
     font-size: 3.2em;
 }
 
 .future-page section h2 {
     font-family: 'Exo 2', sans-serif;
-    color: #ff9ff3;
+    color: #6c5ce7;
     text-shadow: 0 0 12px #ff6b6b;
 }
 
 section p, section ul {
     font-size: 1.4em;
+    color: #2d3436; /* Темный цвет для основного текста */
 }
 
 .home-page section p {
     font-family: 'Roboto', sans-serif;
-    color: #e0e0ff;
 }
 
 .history-page section p {
     font-family: 'Courier Prime', monospace;
-    color: #dfe6e9;
 }
 
 .education-page section p {
     font-family: 'Caveat', cursive;
-    color: #e0ffcd;
     font-size: 1.5em;
 }
 
 .future-page section p {
     font-family: 'Exo 2', sans-serif;
-    color: #ff9ff3;
 }
 
 section ul li {
@@ -309,7 +307,7 @@ footer {
     text-align: center;
     padding: 2.5em;
     background: linear-gradient(45deg, #ff6b6b, #45b7d1);
-    color: white;
+    color: #ffffff; /* Светлый цвет для подвала */
     position: relative;
     bottom: 0;
     width: 100%;
